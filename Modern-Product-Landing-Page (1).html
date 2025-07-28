@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Richoo's Cakes - A Slice of Joy!</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#FDB813",
+              secondary: "#8B4513",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      .hero-bg {
+        background-image: url("https://readdy.ai/api/search-image?query=luxurious%20chocolate%20cake%20slice%20with%20rich%20dark%20chocolate%20ganache%20and%20golden%20accents%20on%20elegant%20dark%20background%20with%20soft%20warm%20lighting%20and%20premium%20bakery%20atmosphere&width=1920&height=1080&seq=hero-bg&orientation=landscape");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      .product-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+      .smooth-scroll {
+        scroll-behavior: smooth;
+      }
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #fdb813;
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body class="smooth-scroll">
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg">
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5"
+      ></div>
+      <nav class="w-full max-w-7xl mx-auto px-6 py-4 relative">
+        <div class="flex items-center justify-between">
+          <div
+            class="font-['Pacifico'] text-3xl text-secondary flex items-center space-x-2"
+          >
+            <span
+              class="bg-primary/10 w-10 h-10 rounded-xl flex items-center justify-center"
+            >
+              <i class="ri-cake-3-line text-primary text-xl"></i>
+            </span>
+            <span>logo</span>
+          </div>
+          <div class="hidden md:flex items-center space-x-1">
+            <a
+              href="#home"
+              class="nav-link text-gray-700 hover:text-primary font-medium px-4 py-2 rounded-full hover:bg-primary/5 transition-all duration-300"
+            >
+              <span class="relative z-10">Home</span>
+            </a>
+            <a
+              href="#about"
+              class="nav-link text-gray-700 hover:text-primary font-medium px-4 py-2 rounded-full hover:bg-primary/5 transition-all duration-300"
+            >
+              <span class="relative z-10">About</span>
+            </a>
+            <a
+              href="#products"
+              class="nav-link text-gray-700 hover:text-primary font-medium px-4 py-2 rounded-full hover:bg-primary/5 transition-all duration-300"
+            >
+              <span class="relative z-10">Products</span>
+            </a>
+            <a
+              href="#contact"
+              class="nav-link text-gray-700 hover:text-primary font-medium px-4 py-2 rounded-full hover:bg-primary/5 transition-all duration-300"
+            >
+              <span class="relative z-10">Contact</span>
+            </a>
+            <a
+              href="https://wa.me/919876543210"
+              id="whatsapp-chat-button"
+              class="ml-4 bg-primary text-secondary font-bold px-6 py-2 !rounded-button hover:bg-yellow-400 transition-all duration-300 flex items-center space-x-2 whitespace-nowrap no-underline"
+            >
+              <i class="ri-whatsapp-line"></i>
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center"
+          >
+            <i class="ri-menu-line text-primary text-xl"></i>
+          </button>
+        </div>
+      </nav>
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white border-t shadow-lg"
+      >
+        <div class="max-w-7xl mx-auto px-6 py-6 space-y-3">
+          <a
+            href="#home"
+            class="flex items-center space-x-3 text-gray-700 hover:text-primary font-medium p-3 rounded-xl hover:bg-primary/5 transition-all duration-300"
+          >
+            <i class="ri-home-line text-primary"></i>
+            <span>Home</span>
+          </a>
+          <a
+            href="#about"
+            class="flex items-center space-x-3 text-gray-700 hover:text-primary font-medium p-3 rounded-xl hover:bg-primary/5 transition-all duration-300"
+          >
+            <i class="ri-information-line text-primary"></i>
+            <span>About</span>
+          </a>
+          <a
+            href="#products"
+            class="flex items-center space-x-3 text-gray-700 hover:text-primary font-medium p-3 rounded-xl hover:bg-primary/5 transition-all duration-300"
+          >
+            <i class="ri-store-2-line text-primary"></i>
+            <span>Products</span>
+          </a>
+          <a
+            href="#contact"
+            class="flex items-center space-x-3 text-gray-700 hover:text-primary font-medium p-3 rounded-xl hover:bg-primary/5 transition-all duration-300"
+          >
+            <i class="ri-phone-line text-primary"></i>
+            <span>Contact</span>
+          </a>
+          <a
+            href="https://wa.me/919876543210"
+            class="w-full mt-4 bg-primary text-secondary font-bold px-6 py-3 !rounded-button hover:bg-yellow-400 transition-all duration-300 flex items-center justify-center space-x-2 no-underline"
+          >
+            <i class="ri-whatsapp-line"></i>
+            <span>Chat on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- Hero Banner Section -->
+    <section
+      id="home"
+      class="min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
+      <div class="absolute inset-0">
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40 z-10"
+        ></div>
+        <img
+          src="https://readdy.ai/api/search-image?query=luxury%20cake%20shop%20interior%20with%20elegant%20display%20of%20wedding%20cakes%2C%20soft%20warm%20lighting%2C%20golden%20accents%2C%20and%20professional%20bakery%20atmosphere%20with%20high%20end%20finishes&width=1920&height=1080&seq=hero-new&orientation=landscape"
+          class="w-full h-full object-cover object-center"
+          alt="Hero Background"
+        />
+      </div>
+      <div class="relative z-20 max-w-7xl mx-auto px-6 py-20 text-center">
+        <div
+          class="inline-block bg-white/10 backdrop-blur-md px-8 py-3 rounded-full mb-8 border border-white/20"
+        >
+          <span class="font-['Pacifico'] text-primary text-2xl"
+            >Richoo's Cakes</span
+          >
+        </div>
+        <h1
+          class="text-5xl md:text-7xl font-bold mb-6 tracking-wider text-white"
+        >
+          Crafting Sweet <span class="text-primary">Memories</span>
+        </h1>
+        <h2
+          class="text-2xl md:text-3xl font-light mb-12 tracking-wide text-white/90 max-w-2xl mx-auto"
+        >
+          Experience the perfect blend of artistry and taste in every slice we
+          create
+        </h2>
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <button
+            class="bg-primary text-secondary font-bold px-8 py-4 !rounded-button hover:bg-yellow-400 transition-all duration-300 text-lg whitespace-nowrap transform hover:scale-105 flex items-center space-x-2"
+          >
+            <i class="ri-shopping-bag-line"></i>
+            <span>Order Now</span>
+          </button>
+          <button
+            class="bg-white/10 backdrop-blur-md text-white border border-white/20 font-bold px-8 py-4 !rounded-button hover:bg-white/20 transition-all duration-300 text-lg whitespace-nowrap transform hover:scale-105 flex items-center space-x-2"
+          >
+            <i class="ri-phone-line"></i>
+            <span>Contact Us</span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/40 to-transparent z-10"
+      ></div>
+    </section>
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-4xl font-bold text-secondary mb-6">
+              About Richoo's Cakes
+            </h2>
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+              At Richoo's Cakes, we believe every celebration deserves something
+              special. Founded with a passion for creating memorable moments, we
+              craft each cake with love, attention to detail, and the finest
+              ingredients.
+            </p>
+            <p class="text-gray-600 text-lg leading-relaxed mb-8">
+              From elegant wedding cakes to delightful birthday treats, our
+              skilled bakers bring years of experience and creativity to every
+              order. We're not just making cakes – we're creating sweet memories
+              that last a lifetime.
+            </p>
+            <div class="flex items-center space-x-6">
+              <div class="text-center">
+                <div class="text-3xl font-bold text-primary">500+</div>
+                <div class="text-gray-600">Happy Customers</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-primary">5+</div>
+                <div class="text-gray-600">Years Experience</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-primary">50+</div>
+                <div class="text-gray-600">Cake Varieties</div>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <img
+              src="https://readdy.ai/api/search-image?query=professional%20baker%20decorating%20beautiful%20wedding%20cake%20in%20modern%20bakery%20kitchen%20with%20warm%20lighting%20and%20elegant%20atmosphere&width=600&height=600&seq=about-img&orientation=squarish"
+              alt="About Richoo's Cakes"
+              class="w-full h-96 object-cover object-top rounded-2xl shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Product Gallery -->
+    <section id="products" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-secondary mb-4">
+            Our Delicious Products
+          </h2>
+          <p class="text-gray-600 text-lg">
+            Discover our wide range of freshly baked cakes and treats
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Wedding Cakes -->
+          <div
+            class="product-card bg-white rounded-2xl overflow-hidden shadow-lg"
+          >
+            <div class="relative">
+              <img
+                src="https://readdy.ai/api/search-image?query=elegant%20white%20wedding%20cake%20with%20intricate%20pearl%20details%20and%20delicate%20decorations%20on%20clean%20white%20background%20with%20soft%20studio%20lighting&width=400&height=300&seq=wedding-cake&orientation=landscape"
+                alt="Wedding Cakes"
+                class="w-full h-64 object-cover object-top"
+              />
+              <div class="absolute bottom-4 left-4">
+                <span
+                  class="bg-primary text-secondary font-bold px-4 py-2 rounded-full text-sm"
+                  >Wedding Cakes</span
+                >
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-secondary mb-2">
+                Wedding Cakes
+              </h3>
+              <p class="text-gray-600">
+                Elegant and romantic cakes perfect for your special day
+              </p>
+            </div>
+          </div>
+          <!-- Birthday Cakes -->
+          <div
+            class="product-card bg-white rounded-2xl overflow-hidden shadow-lg"
+          >
+            <div class="relative">
+              <img
+                src="https://readdy.ai/api/search-image?query=chocolate%20birthday%20cake%20with%20happy%20birthday%20topper%20and%20colorful%20decorations%20on%20clean%20white%20background%20with%20celebration%20atmosphere&width=400&height=300&seq=birthday-cake&orientation=landscape"
+                alt="Birthday Cakes"
+                class="w-full h-64 object-cover object-top"
+              />
+              <div class="absolute bottom-4 left-4">
+                <span
+                  class="bg-primary text-secondary font-bold px-4 py-2 rounded-full text-sm"
+                  >Birthday Cakes</span
+                >
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-secondary mb-2">
+                Birthday Cakes
+              </h3>
+              <p class="text-gray-600">
+                Celebrate every milestone with our festive birthday cakes
+              </p>
+            </div>
+          </div>
+          <!-- Cup Cakes -->
+          <div
+            class="product-card bg-white rounded-2xl overflow-hidden shadow-lg"
+          >
+            <div class="relative">
+              <img
+                src="https://readdy.ai/api/search-image?query=chocolate%20cupcake%20with%20rich%20frosting%20and%20chocolate%20shavings%20on%20clean%20white%20background%20with%20bakery%20lighting&width=400&height=300&seq=cupcake&orientation=landscape"
+                alt="Cup Cakes"
+                class="w-full h-64 object-cover object-top"
+              />
+              <div class="absolute bottom-4 left-4">
+                <span
+                  class="bg-primary text-secondary font-bold px-4 py-2 rounded-full text-sm"
+                  >Cup Cakes</span
+                >
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-secondary mb-2">Cup Cakes</h3>
+              <p class="text-gray-600">
+                Individual treats perfect for any occasion
+              </p>
+            </div>
+          </div>
+          <!-- Chatti Pathiri -->
+          <div
+            class="product-card bg-white rounded-2xl overflow-hidden shadow-lg"
+          >
+            <div class="relative">
+              <img
+                src="https://readdy.ai/api/search-image?query=traditional%20layered%20chatti%20pathiri%20with%20golden%20crispy%20layers%20and%20savory%20filling%20on%20white%20plate%20with%20authentic%20presentation&width=400&height=300&seq=chatti-pathiri&orientation=landscape"
+                alt="Chatti Pathiri"
+                class="w-full h-64 object-cover object-top"
+              />
+              <div class="absolute bottom-4 left-4">
+                <span
+                  class="bg-primary text-secondary font-bold px-4 py-2 rounded-full text-sm"
+                  >Chatti Pathiri</span
+                >
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-secondary mb-2">
+                Chatti Pathiri
+              </h3>
+              <p class="text-gray-600">
+                Traditional layered delicacy with authentic flavors
+              </p>
+            </div>
+          </div>
+          <!-- Irachi Pathiri -->
+          <div
+            class="product-card bg-white rounded-2xl overflow-hidden shadow-lg"
+          >
+            <div class="relative">
+              <img
+                src="https://readdy.ai/api/search-image?query=traditional%20irachi%20pathiri%20with%20meat%20filling%20and%20golden%20brown%20layers%20stacked%20on%20white%20plate%20with%20authentic%20Kerala%20presentation&width=400&height=300&seq=irachi-pathiri&orientation=landscape"
+                alt="Irachi Pathiri"
+                class="w-full h-64 object-cover object-top"
+              />
+              <div class="absolute bottom-4 left-4">
+                <span
+                  class="bg-primary text-secondary font-bold px-4 py-2 rounded-full text-sm"
+                  >Irachi Pathiri</span
+                >
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-secondary mb-2">
+                Irachi Pathiri
+              </h3>
+              <p class="text-gray-600">
+                Savory meat-filled traditional specialty
+              </p>
+            </div>
+          </div>
+          <!-- Cookies -->
+          <div
+            class="product-card bg-white rounded-2xl overflow-hidden shadow-lg"
+          >
+            <div class="relative">
+              <img
+                src="https://readdy.ai/api/search-image?query=chocolate%20chip%20cookies%20arranged%20on%20white%20plate%20with%20golden%20brown%20texture%20and%20chocolate%20chips%20visible%20on%20clean%20background&width=400&height=300&seq=cookies&orientation=landscape"
+                alt="Cookies"
+                class="w-full h-64 object-cover object-top"
+              />
+              <div class="absolute bottom-4 left-4">
+                <span
+                  class="bg-primary text-secondary font-bold px-4 py-2 rounded-full text-sm"
+                  >Cookies</span
+                >
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-secondary mb-2">Cookies</h3>
+              <p class="text-gray-600">
+                Freshly baked cookies for every sweet craving
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Social Media Section -->
+    <section class="py-20 bg-white relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-[url('https://readdy.ai/api/search-image?query=abstract%20background%20with%20soft%20golden%20swirls%20and%20elegant%20patterns%2C%20minimal%20luxury%20design%20with%20warm%20tones&width=1920&height=1080&seq=social-bg&orientation=landscape')] opacity-5"
+      ></div>
+      <div class="max-w-7xl mx-auto px-6 relative">
+        <div class="text-center mb-16">
+          <span
+            class="inline-block bg-primary/10 text-secondary font-semibold px-4 py-2 rounded-full text-sm mb-4"
+            >Connect With Us</span
+          >
+          <h2 class="text-4xl font-bold text-secondary mb-4">
+            Let's Stay Connected
+          </h2>
+          <p class="text-gray-600 text-lg">
+            Join our social media community for daily cake inspiration
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="group">
+            <div
+              class="bg-white rounded-2xl p-8 shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100"
+            >
+              <div class="relative">
+                <div
+                  class="w-20 h-20 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 transform transition-transform group-hover:rotate-6"
+                >
+                  <i class="ri-instagram-fill text-white text-3xl"></i>
+                </div>
+                <span
+                  class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full"
+                  >1.2K</span
+                >
+              </div>
+              <h3 class="text-xl font-bold text-secondary mb-2">Instagram</h3>
+              <p class="text-gray-600 mb-4">
+                Follow us for daily cake inspiration and behind-the-scenes
+                content
+              </p>
+              <button
+                class="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 !rounded-button hover:opacity-90 transition-opacity whitespace-nowrap flex items-center justify-center space-x-2"
+              >
+                <i class="ri-instagram-line"></i>
+                <span>Follow @richoos_cakes</span>
+              </button>
+            </div>
+          </div>
+          <div class="group">
+            <div
+              class="bg-white rounded-2xl p-8 shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100"
+            >
+              <div class="relative">
+                <div
+                  class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-6 transform transition-transform group-hover:rotate-6"
+                >
+                  <i class="ri-facebook-fill text-white text-3xl"></i>
+                </div>
+                <span
+                  class="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full"
+                  >5K</span
+                >
+              </div>
+              <h3 class="text-xl font-bold text-secondary mb-2">Facebook</h3>
+              <p class="text-gray-600 mb-4">
+                Join our Facebook community for exclusive offers and updates
+              </p>
+              <button
+                class="w-full bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-3 !rounded-button hover:opacity-90 transition-opacity whitespace-nowrap flex items-center justify-center space-x-2"
+              >
+                <i class="ri-facebook-line"></i>
+                <span>Like Our Page</span>
+              </button>
+            </div>
+          </div>
+          <div class="group">
+            <div
+              class="bg-white rounded-2xl p-8 shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100"
+            >
+              <div class="relative">
+                <div
+                  class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center mx-auto mb-6 transform transition-transform group-hover:rotate-6"
+                >
+                  <i class="ri-whatsapp-fill text-white text-3xl"></i>
+                </div>
+                <span
+                  class="absolute -top-2 -right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full"
+                  >24/7</span
+                >
+              </div>
+              <h3 class="text-xl font-bold text-secondary mb-2">WhatsApp</h3>
+              <p class="text-gray-600 mb-4">
+                Quick responses and easy ordering through WhatsApp
+              </p>
+              <button
+                class="w-full bg-gradient-to-r from-green-500 to-green-700 text-white px-6 py-3 !rounded-button hover:opacity-90 transition-opacity whitespace-nowrap flex items-center justify-center space-x-2"
+              >
+                <i class="ri-whatsapp-line"></i>
+                <span>Chat With Us</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-secondary mb-4">Get In Touch</h2>
+          <p class="text-gray-600 text-lg">
+            Ready to order your perfect cake? Contact us today!
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- Contact Form -->
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <h3 class="text-2xl font-bold text-secondary mb-6">
+              Send us a Message
+            </h3>
+            <form class="space-y-6">
+              <div>
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary text-sm"
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary text-sm"
+                />
+              </div>
+              <div>
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary text-sm"
+                />
+              </div>
+              <div>
+                <textarea
+                  placeholder="Your Message"
+                  rows="4"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary text-sm resize-none"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-primary text-secondary font-bold py-3 !rounded-button hover:bg-yellow-400 transition-colors whitespace-nowrap"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+          <!-- Contact Information -->
+          <div class="space-y-8">
+            <div class="bg-white rounded-2xl p-8 shadow-lg">
+              <h3 class="text-2xl font-bold text-secondary mb-6">
+                Contact Information
+              </h3>
+              <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"
+                  >
+                    <i class="ri-map-pin-line text-primary text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-secondary mb-1">Address</h4>
+                    <p class="text-gray-600">
+                      Kodikuthiparamba, Kottapuram<br />Malappuram, Kerala
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"
+                  >
+                    <i class="ri-phone-line text-primary text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-secondary mb-1">Phone</h4>
+                    <a
+                      href="https://wa.me/919876543210"
+                      class="text-gray-600 hover:text-primary"
+                      >+91-987 654 3210</a
+                    >
+                  </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"
+                  >
+                    <i class="ri-time-line text-primary text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-secondary mb-1">
+                      Business Hours
+                    </h4>
+                    <p class="text-gray-600">
+                      Mon - Sat: 9:00 AM - 8:00 PM<br />Sunday: 10:00 AM - 6:00
+                      PM
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Map -->
+            <div class="bg-white rounded-2xl p-8 shadow-lg">
+              <h3 class="text-2xl font-bold text-secondary mb-6">Find Us</h3>
+              <div
+                class="w-full h-64 bg-gray-200 rounded-lg overflow-hidden"
+                style="
+                  background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer
+      class="bg-gradient-to-b from-secondary to-secondary/90 text-white py-20 relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-[url('https://readdy.ai/api/search-image?query=abstract%20luxury%20pattern%20with%20golden%20swirls%20and%20elegant%20details%20on%20dark%20background%2C%20minimal%20and%20sophisticated&width=1920&height=1080&seq=footer-bg&orientation=landscape')] opacity-5"
+      ></div>
+      <div class="max-w-7xl mx-auto px-6 relative">
+        <div class="grid md:grid-cols-12 gap-12">
+          <!-- Company Info -->
+          <div class="md:col-span-5">
+            <div class="font-['Pacifico'] text-4xl text-primary mb-6">logo</div>
+            <p class="text-gray-300 mb-8 leading-relaxed text-lg">
+              Creating sweet memories with every slice. At Richoo's Cakes, we're
+              passionate about crafting the perfect cake for your special
+              moments. Experience the magic of our handcrafted delights.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-12 h-12 bg-white/5 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-primary/20 transition-all duration-300 transform hover:scale-110 border border-white/10"
+              >
+                <i class="ri-facebook-fill text-primary text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 bg-white/5 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-primary/20 transition-all duration-300 transform hover:scale-110 border border-white/10"
+              >
+                <i class="ri-instagram-fill text-primary text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 bg-white/5 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-primary/20 transition-all duration-300 transform hover:scale-110 border border-white/10"
+              >
+                <i class="ri-whatsapp-fill text-primary text-xl"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Quick Links -->
+          <div class="md:col-span-3">
+            <h4 class="text-xl font-bold mb-6 flex items-center space-x-2">
+              <i class="ri-links-line text-primary"></i>
+              <span>Quick Links</span>
+            </h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-300 hover:text-primary transition-colors flex items-center space-x-2 group"
+                >
+                  <i
+                    class="ri-arrow-right-s-line text-primary transform group-hover:translate-x-2 transition-transform"
+                  ></i>
+                  <span>Home</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-300 hover:text-primary transition-colors flex items-center space-x-2 group"
+                >
+                  <i
+                    class="ri-arrow-right-s-line text-primary transform group-hover:translate-x-2 transition-transform"
+                  ></i>
+                  <span>About Us</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#products"
+                  class="text-gray-300 hover:text-primary transition-colors flex items-center space-x-2 group"
+                >
+                  <i
+                    class="ri-arrow-right-s-line text-primary transform group-hover:translate-x-2 transition-transform"
+                  ></i>
+                  <span>Products</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-300 hover:text-primary transition-colors flex items-center space-x-2 group"
+                >
+                  <i
+                    class="ri-arrow-right-s-line text-primary transform group-hover:translate-x-2 transition-transform"
+                  ></i>
+                  <span>Contact</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Contact Info -->
+          <div class="md:col-span-4">
+            <h4 class="text-xl font-bold mb-6 flex items-center space-x-2">
+              <i class="ri-customer-service-line text-primary"></i>
+              <span>Contact Info</span>
+            </h4>
+            <ul class="space-y-6">
+              <li class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 bg-white/5 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/10"
+                >
+                  <i class="ri-map-pin-line text-primary"></i>
+                </div>
+                <div>
+                  <h5 class="font-semibold mb-1">Address</h5>
+                  <p class="text-gray-300">
+                    Kodikuthiparamba, Kottapuram, Malappuram, Kerala
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 bg-white/5 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/10"
+                >
+                  <i class="ri-phone-line text-primary"></i>
+                </div>
+                <div>
+                  <h5 class="font-semibold mb-1">Phone</h5>
+                  <p class="text-gray-300">+91-987 654 3210</p>
+                </div>
+              </li>
+              <li class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 bg-white/5 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/10"
+                >
+                  <i class="ri-time-line text-primary"></i>
+                </div>
+                <div>
+                  <h5 class="font-semibold mb-1">Business Hours</h5>
+                  <p class="text-gray-300">
+                    Mon-Sat: 9AM-8PM<br />Sunday: 10AM-6PM
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-16 pt-8 border-t border-white/10">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="text-center md:text-left">
+              <p class="text-gray-300">
+                © 2024 Richoo's Cakes. All rights reserved. |
+                <span class="text-primary">A Slice of Joy in Every Bite!</span>
+              </p>
+            </div>
+            <div class="flex justify-center md:justify-end space-x-4">
+              <img
+                src="https://readdy.ai/api/search-image?query=payment%20methods%20logos%20including%20visa%20mastercard%20and%20other%20digital%20payment%20options%20on%20transparent%20background&width=300&height=40&seq=payment-methods&orientation=landscape"
+                alt="Payment Methods"
+                class="h-8 opacity-75"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script id="mobile-menu-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuBtn.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll("a");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.add("hidden");
+          });
+        });
+      });
+    </script>
+    <script id="smooth-scroll-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        // Smooth scrolling for navigation links
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+              const offsetTop = targetSection.offsetTop - 80; // Account for fixed header
+              window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+    <script id="contact-form-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const contactForm = document.querySelector("form");
+        const formStatus = document.createElement("div");
+        formStatus.className =
+          "fixed top-4 right-4 max-w-md transform transition-all duration-300 translate-x-full";
+        document.body.appendChild(formStatus);
+        function showNotification(message, type) {
+          formStatus.innerHTML = `
+<div class="bg-white rounded-lg shadow-lg p-4 flex items-start space-x-4 border-l-4 ${
+            type === "success" ? "border-green-500" : "border-red-500"
+          }">
+<div class="flex-shrink-0">
+<i class="${
+            type === "success"
+              ? "ri-checkbox-circle-line text-green-500"
+              : "ri-error-warning-line text-red-500"
+          } text-xl"></i>
+</div>
+<div class="flex-1">
+<p class="text-gray-800">${message}</p>
+</div>
+</div>
+`;
+          formStatus.classList.remove("translate-x-full");
+          formStatus.classList.add("translate-x-0");
+          setTimeout(() => {
+            formStatus.classList.remove("translate-x-0");
+            formStatus.classList.add("translate-x-full");
+          }, 5000);
+        }
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const inputs = this.querySelectorAll("input, textarea");
+          let isValid = true;
+          let formData = {};
+          inputs.forEach((input) => {
+            if (!input.value.trim()) {
+              input.style.borderColor = "#ef4444";
+              isValid = false;
+            } else {
+              input.style.borderColor = "#d1d5db";
+              formData[input.placeholder] = input.value;
+            }
+          });
+          if (isValid) {
+            const emailBody = encodeURIComponent(`
+Name: ${formData["Your Name"]}
+Email: ${formData["Your Email"]}
+Phone: ${formData["Phone Number"]}
+Message: ${formData["Your Message"]}
+`);
+            const emailURL = `mailto:nabeelusmannanakkal@gmail.com?subject=New Contact Form Submission&body=${emailBody}`;
+            window.location.href = emailURL;
+            showNotification(
+              "Thank you for your message! We will get back to you soon.",
+              "success"
+            );
+            this.reset();
+          } else {
+            showNotification("Please fill in all required fields.", "error");
+          }
+        });
+      });
+    </script>
+    <script id="social-media-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const socialButtons = document.querySelectorAll(
+          'button[class*="bg-pink-500"], button[class*="bg-blue-500"], button[class*="bg-green-500"]'
+        );
+        socialButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const buttonText = this.textContent.trim();
+            if (buttonText === "Follow") {
+              window.open("https://instagram.com/richoos_cakes", "_blank");
+            } else if (buttonText === "Like") {
+              window.open("https://facebook.com/richoos.cakes", "_blank");
+            } else if (buttonText === "Chat") {
+              window.open("https://wa.me/919876543210", "_blank");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
